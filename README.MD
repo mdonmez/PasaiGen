@@ -14,9 +14,11 @@ An intelligent password generator that creates secure passwords from natural lan
 
 ## Quick Examples
 
+```
 "6 uppercase letters" → YQMHSX
 "strong password"    → qI=fz",L.5S{D=(t
 "4 digit pin"       → 3850
+```
 
 ## Setup
 
@@ -26,30 +28,44 @@ An intelligent password generator that creates secure passwords from natural lan
 
 ### Installation
 
+
 git clone https://github.com/mdonmez/PasaiGen.git
 cd PasaiGen
 pip install -r requirements.txt
 
-# Configure .env file:
 
+### Configuration
+
+Create a `.env` file with the following:
+
+```
 BASE_URL=your_api_base_url
-
 API_KEY=your_api_key
-
 MODEL_NAME=your_model_name
+```
 
 ### Usage
 
+
 python main.py
-# Follow prompts to generate passwords
+
+
+Then follow the prompts to generate passwords.
 
 ## Technical Details
 
 ### Components
-1. **AI Engine**: Processes natural language, generates configurations
-2. **Password Generator**: Implements security rules, validates output
 
-### Security
+1. **AI Engine**
+    - Processes natural language
+    - Generates configurations
+
+2. **Password Generator**
+    - Implements security rules
+    - Validates output
+
+### Security Features
+
 - Strong randomization
 - Balanced character distribution
 - Pattern prevention
@@ -58,4 +74,4 @@ python main.py
 
 ## License
 
-GNU General Public License v3.0 - See [LICENSE](LICENSE)
+This project is licensed under the GNU General Public License v3.0 - See [LICENSE](LICENSE) for details.
