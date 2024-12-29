@@ -14,11 +14,9 @@ An intelligent password generator that creates secure passwords from natural lan
 
 ## Quick Examples
 
-
 "6 uppercase letters" → YQMHSX
 "strong password"    → qI=fz",L.5S{D=(t
 "4 digit pin"       → 3850
-
 
 ## Setup
 
@@ -33,16 +31,17 @@ cd PasaiGen
 pip install -r requirements.txt
 
 # Configure .env file:
-BASE_URL=your_api_base_url
-API_KEY=your_api_key
-MODEL_NAME=your_model_name
 
+BASE_URL=your_api_base_url
+
+API_KEY=your_api_key
+
+MODEL_NAME=your_model_name
 
 ### Usage
 
 python main.py
 # Follow prompts to generate passwords
-
 
 ## Technical Details
 
