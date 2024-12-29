@@ -47,8 +47,11 @@ This is an AI-powered password generator that can create passwords of any length
    ```bash
    pip install openai
    ```
-3. Set your OpenAI API key in the `main.py` script.
+3. Set your AI provider settings in the .env.
+   BASE_URL
+   API_KEY
+   MODEL_NAME
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the GPLv3 License.
