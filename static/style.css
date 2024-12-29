@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Fira+Code:wght@400&display=swap');
+
+:root {
+    --primary: #a0a0a0;          /* Darker gray */
+    --bg-dark: #0a0a0a;          /* Nearly black */
+    --bg-card: #141414;          /* Darker card background */
+    --border: #1a1a1a;           /* Darker border */
+    --text: #e0e0e0;             /* Slightly dimmer text */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+.generator-box {
+    background: var(--bg-card);
+    padding: 2rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease-out;
+}
+
+.specification-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(40, 40, 40, 0.6);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text);
+    transition: all 0.2s ease;
+}
+
+.specification-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(224, 224, 224, 0.1);
+}
+
+#password-output {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    background: rgba(30, 30, 30, 0.6);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--primary);
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 0.5px;
+}
+
+.message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    height: 0;
+}
+
+.message.visible {
+    opacity: 0.9;
+    height: 1.5rem;
+}
+
+.message.visible + .generator-box,
+.generator-box:has(.message.visible) {
+    transform: scale(1.02);
+}
+
+.message.success {
+    color: #a0a0a0;
+}
+
+.message.error {
+    color: #8b8b8b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
