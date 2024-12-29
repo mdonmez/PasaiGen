@@ -69,7 +69,6 @@ The AI Password Generator leverages natural language processing to create passwo
 
 ### Quick Start
 
-<<<<<<< HEAD
 1. Run the application:
    
    python main.py
@@ -122,18 +121,3 @@ The system consists of two main components:
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-=======
-1. Clone the repository.
-2. Install the required dependencies:
-   ```bash
-   pip install openai
-   ```
-3. Set your AI provider settings in the .env.
-   BASE_URL
-   API_KEY
-   MODEL_NAME
-
-## License
-
-This project is licensed under the GPLv3 License.
->>>>>>> 401c967270464bff5ab82b8282ae6286f9223b24
