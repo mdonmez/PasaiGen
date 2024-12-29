@@ -28,11 +28,11 @@ An intelligent password generator that creates secure passwords from natural lan
 
 ### Installation
 
-
+```
 git clone https://github.com/mdonmez/PasaiGen.git
 cd PasaiGen
 pip install -r requirements.txt
-
+```
 
 ### Configuration
 
@@ -46,11 +46,11 @@ MODEL_NAME=your_model_name
 
 ### Usage
 
-
+```
 python main.py
+```
 
-
-Then follow the prompts to generate passwords.
+Then use the web UI for usage.
 
 ## Technical Details
 
