@@ -1,54 +1,123 @@
-# AI Password Generator
+# PasaiGen - AI Password Generator
 
-This is an AI-powered password generator that can create passwords of any length and complexity based on natural language input. No extra configuration is needed—just describe your desired password, and the generator will handle the rest.
+A sophisticated AI-powered password generator that creates secure passwords based on natural language input. This tool intelligently interprets user requirements to generate passwords that meet specific criteria without complex configuration.
 
-## Features
+## Overview
 
-- **Customizable Length**: Specify the exact length of the password.
-- **Character Types**: Include or exclude uppercase letters, lowercase letters, numbers, and special characters.
-- **Natural Language Input**: Describe your password requirements in plain language.
-- **AI-Driven Configuration**: Uses an AI model to interpret your input and generate the appropriate password configuration.
+The AI Password Generator leverages natural language processing to create passwords that match user-specified requirements for length, complexity, and character composition. It provides a seamless interface between human-readable password requirements and secure password generation.
 
-## Examples
+## Key Features
 
-### 6 Character Password with Uppercase Only
+- **Natural Language Processing**: Interpret password requirements from plain English descriptions
+- **Flexible Configuration**:
+  - Custom password length
+  - Selective character type inclusion (uppercase, lowercase, numbers, special characters)
+  - Pattern-based generation
+  - Configurable complexity levels
+- **Smart Generation**: AI-driven configuration ensures password security while meeting specified requirements
+- **Validation**: Automatic verification of password requirements and constraints
 
-**Input**: Enter a password specification: 6 character password with uppercase, not other things
+## Usage Examples
 
-**Output**: Generated password: YQMHSX
+### Basic Examples
 
-### Very Strong Password
+1. **Simple Uppercase Password**
+   
+   Input: "6 character password with uppercase only"
+   Output: YQMHSX
+   
 
-**Input**: Enter a password specification: very strong password
+2. **High Security Password**
+   
+   Input: "very strong password"
+   Output: qI=fz",L.5S{D=(t
+   
 
-**Output**: Generated password: qI=fz",L.5S{D=(t
+3. **Numeric PIN**
+   
+   Input: "4 digit pin"
+   Output: 3850
+   
 
-### 4 Digit PIN
+## Getting Started
 
-**Input**: Enter a password specification: 4 digit pin
+### Prerequisites
 
-**Output**: Generated password: 3850
+- Python 3.12 or higher
+- OpenAI API key (or an API key from a compatible provider)
 
-## Usage
+### Installation
 
-1. Run the `main.py` script.
-2. Enter your password specification when prompted.
-3. The generated password will be displayed.
+1. Clone the repository:
+   
+   git clone https://github.com/mdonmez/PasaiGen.git
+   cd PasaiGen
+   
 
-## Requirements
+2. Install dependencies:
+   
+   pip install -r requirements.txt
+   
 
-- Python 3.12
-- OpenAI (or compitable provider) API key
+3. Configure environment variables:
+   Create a `.env` file with the following:
+   
+   BASE_URL=your_api_base_url
+   API_KEY=your_api_key
+   MODEL_NAME=your_model_name
+   
 
-## Installation
+### Quick Start
 
-1. Clone the repository.
-2. Install the required dependencies:
-   ```bash
-   pip install openai
-   ```
-3. Set your OpenAI API key in the `main.py` script.
+1. Run the application:
+   
+   python main.py
+   
+2. Enter your password requirements when prompted
+3. Receive your generated password
+
+## Technical Implementation
+
+### Architecture Overview
+
+The system consists of two main components:
+
+1. **AI Configuration Engine**
+   - Processes natural language input
+   - Generates structured password configuration
+   - Handles requirement interpretation
+
+2. **Password Generation Engine**
+   - Implements security constraints
+   - Manages character set composition
+   - Ensures requirement compliance
+
+### Generation Process
+
+1. **Input Processing**
+   - Natural language parsing
+   - Requirement extraction
+   - Configuration generation
+
+2. **Password Assembly**
+   - Character pool creation
+   - Requirement validation
+   - Pattern matching
+   - Uniqueness verification
+
+3. **Output Validation**
+   - Security check
+   - Requirement compliance verification
+   - Pattern confirmation
+
+## Security Considerations
+
+- Implements strong randomization
+- Ensures character distribution
+- Prevents predictable patterns
+- Maintains specified complexity requirements
+- AI can't see generated passwords
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.

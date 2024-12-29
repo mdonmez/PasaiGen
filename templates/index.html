@@ -16,6 +16,16 @@
             <input type="text" id="password-output" placeholder="Your password will be shown here" readonly style="text-align: center;">
             <div id="message" class="message"></div>
         </div>
+        <div class="usage-section">
+            <button class="usage-toggle">How to use ▾</button>
+            <div class="usage-content">
+                <ul>
+                    <li>Enter your requirements</li>
+                    <li>Wait briefly for generation</li>
+                    <li>Password generated & copied automatically</li>
+                </ul>
+            </div>
+        </div>        
     </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

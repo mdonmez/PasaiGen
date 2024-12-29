@@ -139,37 +139,34 @@ def get_password_config(user_input: str) -> Dict[str, Any]:
 
 Required JSON format:
 {
-    "length": <integer>,
+    "length": <integer>,  // Default: 12, Range: 4-128
     "use_sets": {
-        "uppercase": <boolean>,
-        "lowercase": <boolean>,
-        "numbers": <boolean>,
-        "special": <boolean>
+        "uppercase": <boolean>,  // Enable A-Z
+        "lowercase": <boolean>,  // Enable a-z
+        "numbers": <boolean>,    // Enable 0-9
+        "special": <boolean>     // Enable !@#$%^&*()
     },
     "min_counts": {
-        "numbers": <integer>
+        "uppercase": <integer>,  // Minimum required uppercase
+        "lowercase": <integer>,  // Minimum required lowercase
+        "numbers": <integer>,    // Minimum required numbers
+        "special": <integer>     // Minimum required special
     },
-    "include": "<specific characters to include>",
-    "exclude": "",
-    "pattern": null,
-    "avoid_ambiguous": false,
-    "avoid_similar": false,
-    "consecutive_unique": false
+    "include": "<specific characters to include>",  // Exact characters to include
+    "exclude": "<characters to exclude>",           // Exact characters to exclude
+    "pattern": "<pattern string>",                  // Use #@$ for number/letter/special
+    "avoid_ambiguous": <boolean>,                  // Avoid il1Lo0O
+    "avoid_similar": <boolean>,                    // Avoid {}[]()\'"`~,;:.<>
+    "consecutive_unique": <boolean>                // No repeated adjacent chars
 }
 
-For "5 digit pass with character a uppercase":
+Examples:
+1. "Generate secure 16 character password with at least 2 numbers":
 {
-    "length": 5,
-    "use_sets": {
-        "uppercase": true,
-        "lowercase": false,
-        "numbers": true,
-        "special": false
-    },
-    "min_counts": {
-        "numbers": 4
-    },
-    "include": "A",
+    "length": 16,
+    "use_sets": {"uppercase": true, "lowercase": true, "numbers": true, "special": true},
+    "min_counts": {"numbers": 2},
+    "include": "",
     "exclude": "",
     "pattern": null,
     "avoid_ambiguous": false,
@@ -177,11 +174,29 @@ For "5 digit pass with character a uppercase":
     "consecutive_unique": false
 }
 
-Key rules:
-1. Don't count included characters in min_counts
-2. Length must accommodate include field + min_counts
-3. Enable only necessary character sets
-4. Pattern field uses: # (number), @ (letter), $ (special)"""
+2. "Create a PIN with 6 digits":
+{
+    "length": 6,
+    "use_sets": {"uppercase": false, "lowercase": false, "numbers": true, "special": false},
+    "min_counts": {"numbers": 6},
+    "include": "",
+    "exclude": "",
+    "pattern": null,
+    "avoid_ambiguous": false,
+    "avoid_similar": false,
+    "consecutive_unique": false
+}
+
+Key Rules:
+1. Always validate length against min_counts + include field
+2. Enable only necessary character sets based on request
+3. Set appropriate min_counts based on user requirements
+4. Pattern uses: # (number), @ (letter), $ (special)
+5. Default to secure settings when request is ambiguous
+6. Consider common password policy requirements
+7. Handle numeric-only requests appropriately
+8. Process natural language indicators like 'avoid similar characters'"""
+
 
     response = client.chat.completions.create(
         model=os.getenv("MODEL_NAME"),

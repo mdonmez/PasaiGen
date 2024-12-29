@@ -66,3 +66,9 @@ document.getElementById('specification').addEventListener('keydown', function() 
     console.log('Keydown event - clearing timer');
     clearTimeout(typingTimer);
 });
+
+document.querySelector('.usage-toggle').addEventListener('click', function() {
+    const content = document.querySelector('.usage-content');
+    content.classList.toggle('expanded');
+    this.textContent = content.classList.contains('expanded') ? 'How to use ▴' : 'How to use ▾';
+});

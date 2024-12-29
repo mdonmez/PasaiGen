@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Fira+Code:wght@400&display=swap');
 
 :root {
-    --primary: #a0a0a0;          /* Darker gray */
-    --bg-dark: #0a0a0a;          /* Nearly black */
-    --bg-card: #141414;          /* Darker card background */
-    --border: #1a1a1a;           /* Darker border */
-    --text: #e0e0e0;             /* Slightly dimmer text */
+    --primary: #a0a0a0;
+    --bg-dark: #0a0a0a;
+    --bg-card: #141414;
+    --border: #1a1a1a;
+    --text: #e0e0e0;
 }
 
 * {
@@ -104,6 +104,64 @@ h1 {
 .message.error {
     color: #8b8b8b;
 }
+
+.usage-section {
+    margin-top: 1.5rem;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+}
+
+.usage-toggle {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.usage-toggle:hover {
+    background: rgba(40, 40, 40, 0.3);
+}
+
+.usage-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1rem;
+    opacity: 0;
+}
+
+.usage-content.expanded {
+    max-height: 300px;
+    padding: 0.75rem 1rem;
+    opacity: 1;
+}
+
+
+.usage-content ul {
+    list-style: none;
+}
+
+.usage-content li {
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.usage-content li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
 
 @media (prefers-reduced-motion: reduce) {
     * {
