@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ viewBox="0 0 500.000000 500.000000"
+ preserveAspectRatio="xMidYMid meet"
+ style="border-radius: 50%">
+
+<g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+  <!-- Adding rounded rectangle for the background -->
+  <rect x="0" y="0" width="500" height="500" rx="50" ry="50" fill="#FFFFFF" />
+  
+  <path d="M0 2500 l0 -2500 2500 0 2500 0 0 2500 0 2500 -2500 0 -2500 0 0
+-2500z m2654 1715 c118 -29 219 -77 307 -143 343 -261 453 -711 264 -1087 -85
+-171 -226 -309 -400 -395 -118 -58 -189 -78 -307 -87 l-88 -6 0 -868 0 -869
+-365 0 -365 0 0 175 0 175 200 0 200 0 0 85 0 85 -200 0 -200 0 0 170 0 170
+200 0 200 0 0 1310 0 1310 229 0 c210 0 236 -2 325 -25z"/>
+  <path d="M2430 3369 l0 -552 69 7 c96 8 193 47 275 108 271 203 299 583 61
+824 -100 101 -240 164 -365 164 l-40 0 0 -551z"/>
+</g>
+</svg>
