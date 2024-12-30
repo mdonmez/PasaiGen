@@ -38,6 +38,7 @@ An intelligent password generator that creates secure passwords from natural lan
 - Auto-copy to clipboard and 5-second display timeout
 
 ### Security Layer
+- AI does not generate passwords or see generated passwords at all
 - Zero storage policy (server/client)
 - Transient clipboard handling
 - Auto-clearing UI
