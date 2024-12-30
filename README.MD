@@ -1,15 +1,13 @@
-<div style="text-align: center;">
-    <img src="static/favicon.svg" alt="Logo" width="50" height="50">
-</div>
-
-<div align="center">
-  <h1>PasaiGen - AI Password Generator</h1>
-</div>
-
-An intelligent password generator that creates secure passwords from natural language input, eliminating complex configuration while maintaining security standards.
-
-<div style="text-align: center;">
-    <img src="static/showcase.png" alt="Image" style="width: 70%; height: 70%">
+<div style="text-align: center;" align="center">
+    <a href="https://github.com/mdonmez/PasaiGen">
+        <img src="static/favicon.svg" alt="Logo" width="70" height="70">
+    </a>
+    <br>
+    <h1>PasaiGen - AI Password Generator</h1>
+    <p>
+An intelligent password generator that creates secure passwords from natural language input, eliminating the need for complex configuration while maintaining security standards.
+    </p>
+    <img src="static/showcase.png" alt="Screenshot" style="width: 70%; height: 70%">
 </div>
 
 ## Features
