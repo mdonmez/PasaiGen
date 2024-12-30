@@ -13,12 +13,22 @@ function showMessage(text, type) {
 
 function copyToClipboard(text) {
     console.log('Attempting to copy to clipboard');
-    navigator.clipboard.writeText(text).then(() => {
+    const textBlob = new Blob([text], { type: 'text/plain' });
+    const clipboardItem = new ClipboardItem({ 'text/plain': textBlob });
+    
+    navigator.clipboard.write([clipboardItem]).then(() => {
         console.log('Copy successful');
         showMessage('Copied', 'success');
     }).catch((error) => {
-        console.error('Copy failed:', error);
-        showMessage('Copy failed', 'error');
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        
+        console.log('Copy successful (fallback)');
+        showMessage('Copied', 'success');
     });
 }
 
@@ -30,7 +40,6 @@ function generatePassword() {
         return;
     }
     
-    // Show loading spinner
     document.getElementById('loading-spinner').classList.add('loading');
     
     console.log('Generating password with specification:', specification);
@@ -43,7 +52,6 @@ function generatePassword() {
     })
     .then(response => response.json())
     .then(data => {
-        // Hide loading spinner
         document.getElementById('loading-spinner').classList.remove('loading');
         
         if (data.success) {
@@ -51,19 +59,27 @@ function generatePassword() {
             const passwordOutput = document.getElementById('password-output');
             passwordOutput.value = data.password;
             copyToClipboard(data.password);
+
+            setTimeout(() => {
+                passwordOutput.classList.add('password-fade');
+                setTimeout(() => {
+                    passwordOutput.value = '';
+                    passwordOutput.classList.remove('password-fade');
+                    console.log('Password cleared for security');
+                }, 500);
+            }, 5000);
         } else {
             console.error('Generation error:', data.error);
             showMessage(data.error, 'error');
         }
     })
     .catch((error) => {
-        // Hide loading spinner on error too
         document.getElementById('loading-spinner').classList.remove('loading');
-        
         console.error('Generation failed:', error);
         showMessage('Generation failed', 'error');
     });
 }
+
 
 document.getElementById('specification').addEventListener('keyup', function() {
     console.log('Keyup event - starting timer for password generation');

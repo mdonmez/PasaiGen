@@ -201,3 +201,46 @@ h1 {
         transition: none !important;
     }
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: #0d0d0d;  /* Darker background */
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #666666;  /* Darker text */
+    border-top: 1px solid var(--border);
+    line-height: 1.6;
+}
+
+.footer a {
+    color: #888888;  /* Darker links but still distinguishable */
+    text-decoration: none;
+    padding: 0;
+    display: inline;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+
+
+
+#password-output.password-fade {
+    animation: textFadeOut 0.5s ease-in;
+}
+
+@keyframes textFadeOut {
+    from {
+        color: var(--primary);
+    }
+    to {
+        color: transparent;
+    }
+}

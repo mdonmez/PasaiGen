@@ -4,13 +4,11 @@ An intelligent password generator that creates secure passwords from natural lan
 
 ## Features
 
-- **Natural Language Input**: Convert plain English requirements into secure passwords
-- **Smart Configuration**:
-   - Customizable length and complexity
-   - Character type selection (A-Z, a-z, 0-9, symbols)
-   - Pattern-based generation
-   - AI-driven security optimization
-- **Automatic Validation**: Ensures all requirements and security constraints are met
+- **Natural Language Input**: Type requirements in plain English
+- **Instant Generation**: Real-time password creation with 2-second debounce
+- **Auto-Copy**: Passwords automatically copy to clipboard
+- **Zero Storage**: Passwords clear automatically after 5 seconds
+- **Secure Design**: No password storage, minimal transmission
 
 ## Quick Examples
 
@@ -19,6 +17,31 @@ An intelligent password generator that creates secure passwords from natural lan
 "strong password"    → qI=fz",L.5S{D=(t
 "4 digit pin"       → 3850
 ```
+## Operation Logic
+
+### Natural Language Processing
+- User enters requirements in plain English
+- 2-second debounce on input processing
+- AI model converts input to password configuration
+
+### Password Generation Flow
+- Frontend → Flask backend → AI model
+- Secure password generation from parsed requirements 
+- Auto-copy to clipboard and 5-second display timeout
+
+### Security Layer
+- Zero storage policy (server/client)
+- Transient clipboard handling
+- Auto-clearing UI
+- Read-only display
+- Secure transmission
+
+### User Experience
+- Real-time feedback & loading states
+- No interaction required, just write
+- Success/error messaging
+- Auto clipboard copy
+- Clean, responsive interface
 
 ## Setup
 
@@ -47,30 +70,38 @@ MODEL_NAME=your_model_name
 ### Usage
 
 ```
-python main.py
+python app.py
 ```
+Then visit the web user interface to start using the app. (Default: http://127.0.0.1:5000/)
 
-Then use the web UI for usage.
+## Technology Stack
 
-## Technical Details
+### Frontend:
+- Vanilla JavaScript
+- Modern CSS3
+- Responsive Design
 
-### Components
+### Backend:
+- Flask
+- Python 3.12+
+- OpenAI compitable API Integration
 
-1. **AI Engine**
-    - Processes natural language
-    - Generates configurations
+### Infrastructure:
+- Render Hosting
+- Environment-based Configuration
 
-2. **Password Generator**
-    - Implements security rules
-    - Validates output
+## Security Features
 
-### Security Features
+### Password Handling
+- No password storage
+- Automatic display clearing
+- Secure clipboard operations
+- Read-only interface
 
-- Strong randomization
-- Balanced character distribution
-- Pattern prevention
-- Zero password retention
-- Configurable complexity
+### Data Protection
+- Minimal data transmission
+- Environment-based secrets
+- Secure API integration
 
 ## License
 
