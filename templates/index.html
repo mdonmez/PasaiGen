@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="PasaiGen is an intelligent password generator that creates secure passwords from natural language input, eliminating complex configuration while maintaining security standards.">
         <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
         <title>PasaiGen</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>    
+    </head>
 <body>
     <div class="container">
         <h1>PasaiGen - AI Password Generator</h1>
         <div class="generator-box">
-            <input type="text" id="specification" 
+            <input type="text" id="specification"
                    placeholder="Describe your password requirements..."
                    class="specification-input">
             <div class="spinner" id="loading-spinner"></div>
@@ -30,10 +31,10 @@
         </div>
     </div>
     <footer class="footer">
-        PasaiGen is an open-source project distributed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPL v3.0 License</a>. 
+        PasaiGen is an open-source project distributed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPL v3.0 License</a>.
         View the source code on <a href="https://github.com/mdonmez/PasaiGen">GitHub</a>.<br>
         Developed with ♡ in Turkey | Powered by Mistral AI and Render | This software is provided as-is without warranty
-    </footer>    
+    </footer>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
