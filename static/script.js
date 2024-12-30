@@ -30,6 +30,9 @@ function generatePassword() {
         return;
     }
     
+    // Show loading spinner
+    document.getElementById('loading-spinner').classList.add('loading');
+    
     console.log('Generating password with specification:', specification);
     fetch('/generate', {
         method: 'POST',
@@ -40,6 +43,9 @@ function generatePassword() {
     })
     .then(response => response.json())
     .then(data => {
+        // Hide loading spinner
+        document.getElementById('loading-spinner').classList.remove('loading');
+        
         if (data.success) {
             console.log('Password generated successfully');
             const passwordOutput = document.getElementById('password-output');
@@ -51,6 +57,9 @@ function generatePassword() {
         }
     })
     .catch((error) => {
+        // Hide loading spinner on error too
+        document.getElementById('loading-spinner').classList.remove('loading');
+        
         console.error('Generation failed:', error);
         showMessage('Generation failed', 'error');
     });

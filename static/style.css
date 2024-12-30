@@ -162,6 +162,40 @@ h1 {
 }
 
 
+/* Base spinner styles */
+.spinner {
+    margin-top: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    height: 0;
+    width: 100%;
+    background: linear-gradient(90deg, var(--bg-card), var(--primary), var(--bg-card));
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 2px;
+}
+
+/* Active loading state */
+.spinner.loading {
+    opacity: 0.9;
+    height: 2px;
+    margin: 1rem auto;
+}
+
+/* Scale effect during loading */
+.spinner.loading + .generator-box,
+.generator-box:has(.spinner.loading) {
+    transform: scale(1.02);
+}
+
+/* Loading animation keyframes */
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Accessibility - Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;
