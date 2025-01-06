@@ -114,4 +114,4 @@ Then visit the web user interface to start using the app. (Default: http://127.0
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - See [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License - See [LICENSE](LICENSE) for details.
